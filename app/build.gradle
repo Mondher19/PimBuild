@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace 'com.example.app'
-    compileSdk 32
+    namespace 'com.example.buildapp'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.app"
+        applicationId "com.example.buildapp"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -23,7 +23,8 @@ android {
             storePassword "buildlab"
             keyAlias "buildlab"
             keyPassword "buildlab"
-        }
+         }
+    }
 
     buildTypes {
         release {
