@@ -1,3 +1,4 @@
+
 name: Generated APK AAB (Upload)
 
 env:
@@ -57,20 +58,23 @@ jobs:
       - name: Sign APK release
         run: |
           jarsigner -sigalg SHA256withRSA -digestalg SHA-256 \
-            -keystore ./my.keystore \
+            -keystore ./BuildLabkeystore.jks \
             -storepass "buildlab" \
             -keypass "buildlab" \
-            app/build/outputs/apk/release/app-release-unsigned.apk buildlab
+            app/build/outputs/apk/release/app-release-unsigned.apk myalias
+
       # Verify APK Signature
       - name: Verify APK signature
         run: |
           jarsigner -verify -verbose -certs app/build/outputs/apk/release/app-release-unsigned.apk
+
       # Align APK Release
       - name: Align APK release
         run: |
           zipalign -v 4 \
             app/build/outputs/apk/release/app-release-unsigned.apk \
             app/build/outputs/apk/release/app-release-signed.apk
+
       # Upload Artifact Build
 
       # Noted For Output [main_project_module]/build/outputs/apk/release/
