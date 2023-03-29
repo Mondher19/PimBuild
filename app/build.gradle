@@ -19,7 +19,7 @@ android {
     
      signingConfigs {
         release {
-            storeFile file("../my.jks")
+            storeFile file("../my.keystores")
             storePassword "buildlab"
             keyAlias "buildlab"
             keyPassword "buildlab"
@@ -29,6 +29,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release 
         }
     }
     compileOptions {
