@@ -59,7 +59,7 @@ jobs:
       - name: Sign APK release
         run: |
           jarsigner -sigalg SHA256withRSA -digestalg SHA-256 \
-            -keystore "./BuildLabkeystore.jks" \
+            -keystore "../BuildLabkeystore.jks" \
             -storepass "buildlab" \
             -keypass "buildlab" \
             app/build/outputs/apk/release/app-release-unsigned.apk myalias
