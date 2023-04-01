@@ -18,12 +18,12 @@ android {
     }
     
    signingConfigs {
-        release {
-             storeFile file("./BuildLabkeystore.jks")
+         release {
+            storeFile file("../BuildLabkeystore.jks")
             storePassword "buildlab"
             keyAlias "myalias"
             keyPassword "buildlab"
-         }
+        }
     }
 
     buildTypes {
