@@ -19,7 +19,7 @@ android {
     
      signingConfigs {
         release {
-            storeFile file("../my.keystores")
+             storeFile file("my.keystore")
             storePassword "buildlab"
             keyAlias "buildlab"
             keyPassword "buildlab"
