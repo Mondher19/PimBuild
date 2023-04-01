@@ -45,6 +45,11 @@ jobs:
       - name: Run gradle tests
         run: ./gradlew test
 
+      # Generate Keystore file
+      - name: Generate keystore file
+        run: |
+          keytool -genkey -v -keystore ./BuildLabkeystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias myalias -storepass buildlab -keypass buildlab -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, S=Unknown, C=Unknown"
+
       # Run Build Project
       - name: Build gradle project
         run: ./gradlew build
