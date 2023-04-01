@@ -17,11 +17,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     
-     signingConfigs {
+   signingConfigs {
         release {
-             storeFile file("my.keystore")
+             storeFile file("BuildLabkeystore.jks")
             storePassword "buildlab"
-            keyAlias "buildlab"
+            keyAlias "myalias"
             keyPassword "buildlab"
          }
     }
